@@ -52,7 +52,7 @@ cd forex-centuries-it
 git clone https://github.com/unbalancedparentheses/forex-centuries.git data/raw/forex-centuries
 
 # 3. Installa dipendenze
-pip install pandas numpy matplotlib openpyxl jupyter
+pip install -r requirements.txt
 ```
 
 ## Uso
