@@ -16,6 +16,11 @@ CHARTS.mkdir(parents=True, exist_ok=True)
 
 
 def main():
+    if not DATA.exists():
+        print(f"ERRORE: Directory non trovata: {DATA}")
+        print("Esegui: git clone https://github.com/unbalancedparentheses/forex-centuries.git data/raw/forex-centuries")
+        return
+    
     # Città italiane
     italian_cities = ["Ancona", "Brescia", "Florence", "Milan", "Naples", "Pisa", "Siena"]
     
@@ -24,9 +29,12 @@ def main():
     for city in italian_cities:
         filepath = DATA / f"{city}_Wheat.tab"
         if filepath.exists():
-            df = pd.read_csv(filepath, sep="\t")
-            df["Price"] = pd.to_numeric(df["Standardized Value"], errors="coerce")
-            grains[city] = df.dropna(subset=["Price"])
+            try:
+                df = pd.read_csv(filepath, sep="\t")
+                df["Price"] = pd.to_numeric(df["Standardized Value"], errors="coerce")
+                grains[city] = df.dropna(subset=["Price"])
+            except Exception as e:
+                print(f"Avviso: Errore lettura {city}: {e}")
     
     print("Prezzo medio grano (g argento/litro):")
     for city, df in sorted(grains.items(), key=lambda x: x[1]["Price"].mean()):

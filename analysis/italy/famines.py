@@ -16,8 +16,14 @@ CHARTS.mkdir(parents=True, exist_ok=True)
 
 
 def main():
+    filepath = DATA / "Pisa_Wheat.tab"
+    if not filepath.exists():
+        print(f"ERRORE: File non trovato: {filepath}")
+        print("Esegui: git clone https://github.com/unbalancedparentheses/forex-centuries.git data/raw/forex-centuries")
+        return
+    
     # Carica dati Pisa
-    pisa = pd.read_csv(DATA / "Pisa_Wheat.tab", sep="\t")
+    pisa = pd.read_csv(filepath, sep="\t")
     pisa["Year"] = pd.to_numeric(pisa["Year"], errors="coerce")
     pisa["Price"] = pd.to_numeric(pisa["Standardized Value"], errors="coerce")
     pisa = pisa.dropna(subset=["Year", "Price"]).sort_values("Year")

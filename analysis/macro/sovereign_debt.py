@@ -16,8 +16,14 @@ CHARTS.mkdir(parents=True, exist_ok=True)
 
 
 def main():
+    filepath = DATA / "imf_hpdd_debt_gdp.csv"
+    if not filepath.exists():
+        print(f"ERRORE: File non trovato: {filepath}")
+        print("Esegui: git clone https://github.com/unbalancedparentheses/forex-centuries.git data/raw/forex-centuries")
+        return
+    
     # Carica dati
-    imf = pd.read_csv(DATA / "imf_hpdd_debt_gdp.csv")
+    imf = pd.read_csv(filepath)
     imf = imf[imf["country"].apply(lambda x: isinstance(x, str) and len(x) == 2)]
     
     country_map = {"IT": "Italy", "US": "USA", "GB": "UK", "FR": "France", 

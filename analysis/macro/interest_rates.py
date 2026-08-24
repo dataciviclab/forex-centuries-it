@@ -16,9 +16,14 @@ CHARTS.mkdir(parents=True, exist_ok=True)
 
 
 def main():
+    filepath = DATA / "schmelzing_real_interest_rates.xlsx"
+    if not filepath.exists():
+        print(f"ERRORE: File non trovato: {filepath}")
+        print("Esegui: git clone https://github.com/unbalancedparentheses/forex-centuries.git data/raw/forex-centuries")
+        return
+    
     # Carica dati
-    df = pd.read_excel(DATA / "schmelzing_real_interest_rates.xlsx",
-                       sheet_name="IV. Country level, 1310-2018", header=None)
+    df = pd.read_excel(filepath, sheet_name="IV. Country level, 1310-2018", header=None)
     
     co = df.iloc[3:].copy()
     co.columns = range(co.shape[1])

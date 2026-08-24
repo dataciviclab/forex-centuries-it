@@ -17,7 +17,13 @@ CHARTS.mkdir(parents=True, exist_ok=True)
 
 def main():
     # Carica dati
-    panel = pd.read_csv(DATA / "yearly_unified_panel.csv")
+    filepath = DATA / "yearly_unified_panel.csv"
+    if not filepath.exists():
+        print(f"ERRORE: File non trovato: {filepath}")
+        print("Esegui: git clone https://github.com/unbalancedparentheses/forex-centuries.git data/raw/forex-centuries")
+        return
+    
+    panel = pd.read_csv(filepath)
     panel["year"] = panel["year"].astype(int)
     italy = panel[panel["country"] == "Italy"].sort_values("year")
     
