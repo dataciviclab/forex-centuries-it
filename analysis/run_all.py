@@ -13,9 +13,12 @@ SCRIPTS = [
     "italy/grain_prices.py",
     "italy/famines.py",
     "europe/wheat_comparison.py",
+    "europe/correlations.py",
     "macro/interest_rates.py",
     "macro/sovereign_debt.py",
     "macro/gold_hedge.py",
+    "macro/fat_tails.py",
+    "macro/currency_regimes.py",
 ]
 
 REQUIRED_FILES = [

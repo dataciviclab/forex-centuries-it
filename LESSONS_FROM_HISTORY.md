@@ -6,7 +6,7 @@
 
 ## 1. Le code grasse sono permanenti
 
-**Dato**: Ogni valuta, in ogni secolo, mostra eventi estremi 3-6x più frequenti della distribuzione normale. HKD ha curtosi 4109, CNY 3846.
+**Dato**: Ogni valuta, in ogni secolo, mostra eventi estremi 3-6x più frequenti della distribuzione normale. HKD ha curtosi 4109, CNY 3846. *(Vedi: charts/macro/fat_tails_peg_paradox.png)*
 
 **Storia**: Dalla Peste Nera (1348) alle guerre mondiali, gli shock economici non seguono distribuzioni normali. Il 2008 (Lehman), il 2020 (COVID) e il 2022 (guerra Ucraina) hanno confermato il pattern.
 
@@ -46,7 +46,7 @@
 
 ## 5. I peg sono trappole mortali
 
-**Dato**: HKD ha volatilità giornaliera 3.2% (la più bassa) ma curtosi 4109 (la più alta). Il peg comprime i movimenti ma quando cede, il danno è catastrofico.
+**Dato**: HKD ha volatilità giornaliera 3.2% (la più bassa) ma curtosi 4109 (la più alta). Il peg comprime i movimenti ma quando cede, il danno è catastrofico. *(Vedi: charts/macro/fat_tails_peg_paradox.png)*
 
 **Storia**: Ogni peg che dura abbastanza a lungo finisce con una crisi. Il gold standard, Bretton Woods, l'ERM — tutti finiti con crisi.
 
